@@ -75,6 +75,13 @@ adminAccess.getTrainDetails().add(trainDetails);
     @PutMapping("/update-TrainDetails/{trainNumber}")
     public ResponseEntity<Void> updateTrainDetails(Principal principal,@RequestBody TrainDetails trainDetails,@PathVariable("trainNumber") String trainNumber){
         String error="";
+        // AdminAccess adminAccess = this.adminRepository.findAdminAccessByAdminName(principal.getName());
+
+        // trainDetails.setAdminAccess(adminAccess);
+        // adminAccess.getTrainDetails().add(trainDetails);
+
+        
+        this.trainService.deleteTrainDetails(trainNumber,error);
         AdminAccess adminAccess = this.adminRepository.findAdminAccessByAdminName(principal.getName());
 
         trainDetails.setAdminAccess(adminAccess);
