@@ -16,7 +16,6 @@ public class ClassType {
     @Id
     @GeneratedValue
     int c_Id;
-    @Column(unique = true)
     String classtype;
 
     public Long numberOfSeats;
