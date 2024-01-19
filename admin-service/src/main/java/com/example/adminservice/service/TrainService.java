@@ -29,7 +29,7 @@ public class TrainService {
     public String updateTrainDetails(TrainDetails trainDetails,String TrainNumber,String error){
 
         try {
-            deleteTrainDetails(TrainNumber,error);
+            // deleteTrainDetails(TrainNumber,error);
             if(!(error.length()>1)){
 
                 this.trainRepository.save(trainDetails);
